@@ -10,3 +10,10 @@ Domande da farsi quando si crea una funzione:
 3. Devo restituire un valore?
 4. Se sì, di che tipo?*/
 
+let parola = prompt ( "una parola ? ").toLowerCase()
+
+console.log ( `la parola è: ${parola}`)
+
+for (let i = parola.length - 1; i => 0; i--) {
+    parolaInversa += parola.charAt(i)
+}
