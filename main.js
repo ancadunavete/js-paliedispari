@@ -10,20 +10,54 @@ Domande da farsi quando si crea una funzione:
 3. Devo restituire un valore?
 4. Se sì, di che tipo?*/
 
-let parola = prompt ( "una parola ? ").toLowerCase()
+let parola = prompt("Una parola?").toLowerCase();
 
-console.log ( `la parola è: ${parola}`)
+console.log(`La parola è: ${parola}`);
 
 function palindroma() {
-    for (let i = parola.length - 1; i => 0; i--) {
-    parolaInversa += parola.charAt(i)
+    let parolaInversa = "";
+
+    for (let i = parola.length - 1; i >= 0; i--) {
+        parolaInversa += parola.charAt(i);
     }
 
     if (parola === parolaInversa) {
-    console.log (`La parola ${parola}` e ${parolaInversa} è palindroma)
+        console.log(`La parola "${parola}" e "${parolaInversa}" è palindroma.`);
     } else {
-    console.log (`La parola ${parola}` e ${parolaInversa} non è palindroma)
+        console.log(`La parola "${parola}" e "${parolaInversa}" non è palindroma.`);
     }
 }
 
-palindroma()
+palindroma();
+
+
+// ------
+
+function numeriRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    
+
+function parioDispari(numero) {
+    return numero % 2 === 0 ? "pari" : "dispari";
+    }
+    
+
+let sceltaUtente = prompt ("Scegli fra Pari o Dispari");
+let numeroUtente = parseInt(prompt("Inserisci un numero da 1 a 5"))
+    
+if (numeroUtente < 1 || numeroUtente > 5 || isNaN(numeroUtente)) {
+    console.log("Numero non valido");
+} else {
+    let numeroComputer = numeriRandom(1, 5);
+    console.log(`Il numero del computer è: ${numeroComputer}`);
+    let sommaNumeri = numeroUtente + numeroComputer;
+    console.log(`La somma dei numeri è: ${sommaNumeri}`);
+    let risultatoPariDispari = parioDispari(sommaNumeri);
+    console.log(`La somma è: ${risultatoPariDispari}`);
+    if (sceltaUtente === risultatoPariDispari) {
+    console.log("Hai vinto!");
+    } else {
+    console.log("Hai perso.");
+    }
+}
